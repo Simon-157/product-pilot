@@ -1,0 +1,72 @@
+[debug] [2023-04-27T11:46:16.330Z] ----------------------------------------------------------------------
+[debug] [2023-04-27T11:46:16.332Z] Command:       /usr/local/bin/firebase /home/simon/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-04-27T11:46:16.332Z] CLI Version:   11.25.3
+[debug] [2023-04-27T11:46:16.332Z] Platform:      linux
+[debug] [2023-04-27T11:46:16.332Z] Node Version:  v16.16.0
+[debug] [2023-04-27T11:46:16.333Z] Time:          Thu Apr 27 2023 11:46:16 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-04-27T11:46:16.333Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-27T11:46:16.393Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-27T11:46:16.393Z] > authorizing via signed-in user (boatengsimonjnr157@gmail.com)
+[debug] [2023-04-27T11:46:16.393Z] [iam] checking project product-pilot for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-27T11:46:16.395Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions [none]
+[debug] [2023-04-27T11:46:16.395Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions x-goog-quota-user=projects/product-pilot
+[debug] [2023-04-27T11:46:16.395Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-27T11:46:17.356Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions 200
+[debug] [2023-04-27T11:46:17.356Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-27T11:46:17.361Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot [none]
+[debug] [2023-04-27T11:46:18.339Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot 200
+[debug] [2023-04-27T11:46:18.340Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot {"projectId":"product-pilot","projectNumber":"140875741642","displayName":"product-pilot","name":"projects/product-pilot","resources":{"hostingSite":"product-pilot"},"state":"ACTIVE","etag":"1_95bc56f0-0097-4846-9083-729f4e4980db"}
+[debug] [2023-04-27T11:46:20.706Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites pageToken=&pageSize=10
+[debug] [2023-04-27T11:46:22.526Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites 200
+[debug] [2023-04-27T11:46:22.526Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites {"sites":[{"name":"projects/product-pilot/sites/product-pilot","defaultUrl":"https://product-pilot.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-27T11:46:22.527Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites 
+[debug] [2023-04-27T11:46:23.852Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites 200
+[debug] [2023-04-27T11:46:23.852Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites {"sites":[{"name":"projects/product-pilot/sites/product-pilot","defaultUrl":"https://product-pilot.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-27T11:46:23.854Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot/webApps/-/config [none]
+[debug] [2023-04-27T11:46:25.186Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot/webApps/-/config 200
+[debug] [2023-04-27T11:46:25.186Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot/webApps/-/config {"projectId":"product-pilot","appId":"1:140875741642:web:60b7706b9cdb3afa573733","storageBucket":"product-pilot.appspot.com","apiKey":"AIzaSyD1DoKsd2rBX1jcosAuNbvl-ee_m_aYAAI","authDomain":"product-pilot.firebaseapp.com","messagingSenderId":"140875741642"}
+[debug] [2023-04-27T11:47:29.446Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/home/simon/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:374:42)
+    at async deploy (/home/simon/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-27T11:48:55.836Z] ----------------------------------------------------------------------
+[debug] [2023-04-27T11:48:55.838Z] Command:       /usr/local/bin/firebase /home/simon/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-04-27T11:48:55.838Z] CLI Version:   11.25.3
+[debug] [2023-04-27T11:48:55.838Z] Platform:      linux
+[debug] [2023-04-27T11:48:55.839Z] Node Version:  v16.16.0
+[debug] [2023-04-27T11:48:55.839Z] Time:          Thu Apr 27 2023 11:48:55 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-04-27T11:48:55.839Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-27T11:48:55.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-27T11:48:55.950Z] > authorizing via signed-in user (boatengsimonjnr157@gmail.com)
+[debug] [2023-04-27T11:48:55.950Z] [iam] checking project product-pilot for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-27T11:48:55.953Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions [none]
+[debug] [2023-04-27T11:48:55.953Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions x-goog-quota-user=projects/product-pilot
+[debug] [2023-04-27T11:48:55.953Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-27T11:48:56.906Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions 200
+[debug] [2023-04-27T11:48:56.907Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/product-pilot:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-27T11:48:56.908Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot [none]
+[debug] [2023-04-27T11:48:57.541Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot 200
+[debug] [2023-04-27T11:48:57.541Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot {"projectId":"product-pilot","projectNumber":"140875741642","displayName":"product-pilot","name":"projects/product-pilot","resources":{"hostingSite":"product-pilot"},"state":"ACTIVE","etag":"1_95bc56f0-0097-4846-9083-729f4e4980db"}
+[debug] [2023-04-27T11:49:00.776Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites pageToken=&pageSize=10
+[debug] [2023-04-27T11:49:02.343Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites 200
+[debug] [2023-04-27T11:49:02.343Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites {"sites":[{"name":"projects/product-pilot/sites/product-pilot","defaultUrl":"https://product-pilot.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-27T11:49:02.344Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites 
+[debug] [2023-04-27T11:49:03.746Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites 200
+[debug] [2023-04-27T11:49:03.747Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/product-pilot/sites {"sites":[{"name":"projects/product-pilot/sites/product-pilot","defaultUrl":"https://product-pilot.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-27T11:49:03.747Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot/webApps/-/config [none]
+[debug] [2023-04-27T11:49:04.874Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot/webApps/-/config 200
+[debug] [2023-04-27T11:49:04.875Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/product-pilot/webApps/-/config {"projectId":"product-pilot","appId":"1:140875741642:web:60b7706b9cdb3afa573733","storageBucket":"product-pilot.appspot.com","apiKey":"AIzaSyD1DoKsd2rBX1jcosAuNbvl-ee_m_aYAAI","authDomain":"product-pilot.firebaseapp.com","messagingSenderId":"140875741642"}
+[debug] [2023-04-27T11:49:34.529Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/home/simon/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:374:42)
+    at async deploy (/home/simon/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
