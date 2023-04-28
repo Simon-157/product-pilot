@@ -1,3 +1,12 @@
+/**
+ * The code exports two React components that render arrow icons for next and previous actions.
+ * @param props - The props parameter is an object that contains any properties passed down to the
+ * component from its parent component. In this case, it is of type IconProp, which is a custom type
+ * defined in the project.
+ * @returns Two React functional components, NextIcon and PreviousIcon, that render SVG icons with
+ * green fill. They both accept an IconProp object as a prop.
+ */
+
 import { IconProp } from "@/types/icon-types";
 
 export const NextIcon: React.FC<IconProp> = (props) => {

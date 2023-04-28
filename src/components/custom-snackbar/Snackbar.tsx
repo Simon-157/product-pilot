@@ -26,7 +26,7 @@ const CustomSnackbar: React.FC<Props> = ({ message, variant, open, onClose }) =>
       setTimeout(() => {
         setIsVisible(false);
         onClose();
-      }, 3000);
+      }, 2000);
     }
   }, [open, onClose]);
 
