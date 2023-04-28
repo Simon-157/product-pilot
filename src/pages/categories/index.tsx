@@ -18,7 +18,7 @@ const CategoryPage = () => {
   <div className={categoryStyles.baseWrapper}>
     {isLoading && <Loader />}
     {isError && <p>Error fetching categories.</p>}
-    {categories.map((category: CategoryType) => (
+    {categories?.map((category: CategoryType) => (
       <CategoryCard key={category.id} category={category} />
     ))}
   </div>

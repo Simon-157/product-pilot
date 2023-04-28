@@ -28,7 +28,7 @@ function Rankings({active}:PropsType) {
             <h1>Piloted Products Comparison</h1>
             {/* <span><Button type="button" children={undefined} onClick={()=>resetTable()}/></span> */}
           </header>
-          {active.length > 0 ? (
+          {active?.length > 0 ? (
             <section className={rankingsStyles.tableParent}>
               <Table headers={headers} body={active} sortProducts={() =>{}} />
 

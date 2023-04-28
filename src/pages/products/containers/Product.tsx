@@ -36,7 +36,7 @@ const Product: React.FC<ProductProps> = ({ products, uniqueBrands, brandFilter, 
                             />
 
                             <div className={pStyles.baseWrapper}>
-                                {products.map((prod: ProductType) => (
+                                {products?.map((prod: ProductType) => (
                                     <div key={prod.id} className={pStyles.categoryCard}>
                                         <ProductCard product={prod} compare={false} />
                                     </div>

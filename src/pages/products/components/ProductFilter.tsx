@@ -15,7 +15,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ uniqueBrands, brandFilter
       <label>
         <select value={brandFilter} onChange={(e) => setBrandFilter(e.target.value)}>
           <option value="">All</option>
-          {uniqueBrands.map((brand) => (
+          {uniqueBrands?.map((brand) => (
             <option key={brand} value={brand}>
               {brand}
             </option>

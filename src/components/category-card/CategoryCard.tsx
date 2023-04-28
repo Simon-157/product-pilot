@@ -34,14 +34,14 @@ const CategoryCard: React.FC<Props> = ({ category }) => {
   return (
     <div className={styles.itemOne}>
       <div className={styles.imgWrapper}>
-        <img alt="category image" src={category.image} />
+        <img alt="category image" src={category?.image} />
       </div>
       <div className={styles.textWrapper}>
-        <h3>{category.name}</h3>
-        <h4>{category.description}</h4>
+        <h3>{category?.name}</h3>
+        <h4>{category?.description}</h4>
         <Link
-          href={`/products?category=${category.name}`}
-          onClick={() =>  handleCategoryChange(category.name)}
+          href={`/products?category=${category?.name}`}
+          onClick={() =>  handleCategoryChange(category?.name)}
         >
           Pilot Products
         </Link>

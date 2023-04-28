@@ -7,5 +7,5 @@ export const filterProductsByBrand = (
   if (!brandFilter) {
     return products;
   }
-  return products.filter((product) => product.brand === brandFilter);
+  return products?.filter((product) => product.brand === brandFilter);
 };

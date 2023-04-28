@@ -21,10 +21,10 @@ export function sortTable(table: ProductType[], key: ProductKey,): ProductType[]
     throw new Error("Table does not contain key: " + key);
 
   if (key === "name") {
-    table_.sort((a, b) => {
+    table_?.sort((a, b) => {
       if (typeof a['name'] === "string" && typeof b['name'] === "string") {
-        const current = a.name.toLowerCase();
-        const next = b.name.toLowerCase();
+        const current = a?.name.toLowerCase();
+        const next = b?.name.toLowerCase();
 
         if (current < next) return -1;
         else if (current > next) return 1;
@@ -38,8 +38,8 @@ export function sortTable(table: ProductType[], key: ProductKey,): ProductType[]
   else if(key === "processor") {
     table_.sort((a, b) => {
       if (typeof a['processor'] === "string" && typeof b['processor'] === "string") {
-        const current = a.processor.toLowerCase();
-        const next = b.processor.toLowerCase();
+        const current = a?.processor.toLowerCase();
+        const next = b?.processor.toLowerCase();
 
         if (current < next) return -1;
         else if (current > next) return 1;
@@ -50,7 +50,7 @@ export function sortTable(table: ProductType[], key: ProductKey,): ProductType[]
     });
   }
 
-  table_.sort((a, b) => (b[key] as number) - (a[key] as number));
+  table_?.sort((a, b) => (b[key] as number) - (a[key] as number));
 
   return table_;
 }

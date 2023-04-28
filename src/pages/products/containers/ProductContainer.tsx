@@ -51,7 +51,7 @@ const ProductContainer: React.FC<ProductContainerProps> = () => {
           isLoading={isLoading}
           isError={isError}
           currentPage={currentPage}
-          totalPages={Math.ceil(filteredData.length / itemsPerPage)}
+          totalPages={Math.ceil(filteredData?.length / itemsPerPage)}
           onPageChange={(page: number) => setCurrentPage(page)}
           activeProducts={activeProducts}
           />

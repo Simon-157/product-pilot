@@ -15,7 +15,7 @@ export const useIsActiveProduct = create<ActiveProductsState>((set) => ({
     set((state) => ({ activeProducts: [...state.activeProducts, product] })),
   removeFromActive: (id) =>
     {set((state) => ({
-      activeProducts: state.activeProducts.filter((p) => p.id !== id),
+      activeProducts: state.activeProducts?.filter((p) => p.id !== id),
     })); console.log("i am in zustand");
     },
 }));

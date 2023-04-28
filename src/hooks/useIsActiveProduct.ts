@@ -13,12 +13,12 @@ export const useIsActiveProduct = (initialState = [] as ProductType[]) => {
 
   const removeActiveProduct = (product: ProductType) => {
     setActiveProducts((prevActiveProducts) =>
-      prevActiveProducts.filter((p) => p.id !== product.id)
+      prevActiveProducts?.filter((p) => p.id !== product.id)
     );
   };
 
   const isActiveProduct = (product:ProductType) => {
-    return activeProducts.some((p) => p.id === product.id);
+    return activeProducts?.some((p) => p.id === product.id);
   };
 
   useEffect(() => {

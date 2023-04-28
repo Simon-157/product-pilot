@@ -7,5 +7,5 @@ export const paginateProducts = (
 ): ProductType[] => {
   const startIndex = currentPage * itemsPerPage;
   const endIndex = (currentPage + 1) * itemsPerPage;
-  return products.slice(startIndex, endIndex);
+  return products?.slice(startIndex, endIndex);
 };
