@@ -1,19 +1,23 @@
-import create from 'zustand';
+import { ProductType } from "@/types/product-type";
+import {create} from "zustand";
 
-type ProductId = number;
+type ActiveProductsState = {
+  activeProducts: ProductType[];
+  resetActive: () => void;
+  addToActive: (product: ProductType) => void;
+  removeFromActive: (id: number) => void;
+};
 
-interface ActiveProductsState {
-  activeProductIds: ProductId[];
-  addActiveProduct: (productId: ProductId) => void;
-  removeActiveProduct: (productId: ProductId) => void;
-}
-
-export const useActiveProductsStore = create<ActiveProductsState>((set) => ({
-  activeProductIds: [],
-  addActiveProduct: (productId) =>
-    set((state) => ({ activeProductIds: [...state.activeProductIds, productId] })),
-  removeActiveProduct: (productId) =>
-    set((state) => ({
-      activeProductIds: state.activeProductIds.filter((id) => id !== productId),
-    })),
+export const useIsActiveProduct = create<ActiveProductsState>((set) => ({
+  activeProducts: [],
+  resetActive: () => set((state) => ({ activeProducts: [] })),
+  addToActive: (product) =>
+    set((state) => ({ activeProducts: [...state.activeProducts, product] })),
+  removeFromActive: (id) =>
+    {set((state) => ({
+      activeProducts: state.activeProducts.filter((p) => p.id !== id),
+    })); console.log("i am in zustand");
+    },
 }));
+
+

@@ -1,27 +1,27 @@
 // ProductContainer.tsx
-
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import React, { useEffect, useRef, useState } from "react";
 import { debounce } from "lodash";
 
 // custom hooks and functions
 import { ProductType } from "@/types/product-type";
 import { filterProductsByBrand } from "@/utils/functions/filter-data";
 import { paginateProducts } from "@/utils/functions/slice-paginate";
-import { useIsActiveProduct } from "@/store/useActiveProductA";
+import { useIsActiveProduct } from "@/store/useActiveProduct";
 import { useProductQuery } from "@/hooks/useProductQuery";
 
 // components
 import Product from "./Product";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 interface ProductContainerProps {}
 
 const ProductContainer: React.FC<ProductContainerProps> = () => {
   const { activeProducts } = useIsActiveProduct();
-  const router = useRouter();
-  const categoryName = router.query.category as string;
+  const categoryName = useSelector((state: RootState) => state.category.categoryName);
+  console.log(categoryName);
+  
   const { products, isLoading, isError } = useProductQuery(categoryName);
-//   console.log("products", products, "route", categoryName);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(4);
   const [brandFilter, setBrandFilter] = useState("");
@@ -43,18 +43,18 @@ const ProductContainer: React.FC<ProductContainerProps> = () => {
   const uniqueBrands = Array.from(new Set(products?.map((prod: ProductType) => prod.brand)));
 
   return (
-    <Product
-      products={displayedData}
-      uniqueBrands={uniqueBrands}
-      brandFilter={brandFilter}
-      setBrandFilter={setBrandFilter}
-      isLoading={isLoading}
-      isError={isError}
-      currentPage={currentPage}
-      totalPages={Math.ceil(filteredData.length / itemsPerPage)}
-      onPageChange={(page: number) => setCurrentPage(page)}
-      activeProducts={activeProducts}
-    />
+        <Product
+          products={displayedData}
+          uniqueBrands={uniqueBrands}
+          brandFilter={brandFilter}
+          setBrandFilter={setBrandFilter}
+          isLoading={isLoading}
+          isError={isError}
+          currentPage={currentPage}
+          totalPages={Math.ceil(filteredData.length / itemsPerPage)}
+          onPageChange={(page: number) => setCurrentPage(page)}
+          activeProducts={activeProducts}
+          />
   );
 };
 

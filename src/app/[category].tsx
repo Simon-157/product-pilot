@@ -5,7 +5,7 @@ import { QueryObserverResult, useQuery } from "react-query";
 import { debounce } from "lodash";
 
 //components
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 import { ItemsProvider, useItemsContext } from "@/contexts/ItemsContext";
 import { useIsActiveProduct } from "@/store/useActiveProductA";
 // import { products } from "@/utils/data/products";
@@ -13,7 +13,7 @@ import { NextIcon, PreviousIcon } from "@/components/custom-icons/Svg";
 import ProductCard from "@/components/product-card/ProductCard";
 import fetchProducts, { fetchProductsFromDb } from "@/api/fetch-products";
 import styles from "./category.module.scss";
-import Rankings from "../../compare";
+import Rankings from "../pages/compare";
 
 
 interface ProductProps {}

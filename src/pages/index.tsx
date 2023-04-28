@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Home from "./home/Home";
 import { ActiveItemsProvider } from "@/contexts/ActiveItemsStoreContext";
+import { CategoryContextProvider } from "@/contexts/CategoryNameContext";
 // import '../styles/globals.css'
 
 export default function Landing() {
@@ -16,6 +17,7 @@ export default function Landing() {
         <main>
           <Home />
         </main>
+
       </ActiveItemsProvider>
     </>
   );

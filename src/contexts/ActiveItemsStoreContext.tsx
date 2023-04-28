@@ -1,6 +1,5 @@
-import { useActiveProductsStore } from '@/store/useActiveProduct';
-import { useIsActiveProduct } from '@/store/useActiveProductA';
-import { ProductType } from '@/types/product';
+import { useIsActiveProduct } from '@/store/useActiveProduct';
+import { ProductType } from '@/types/product-type';
 import React, { ReactNode } from 'react';
 
 interface ActiveItemsContextState {

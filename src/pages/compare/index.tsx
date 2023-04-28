@@ -6,19 +6,16 @@ import rankingsStyles from "./rankings.module.scss";
 
 //components
 import { headers } from "@/utils/data/headers";
-// import Table from "@/components/product-table/Table";
-import { useItemsContext } from "@/contexts/ItemsContext";
-import { ProductType } from "@/types/product";
-import Table from "@/components/product-table/TableA";
+import { ProductType } from "@/types/product-type";
+import Table from "@/components/product-table/Table";
 import Button from "@/components/button/Button";
-import { useIsActiveProduct } from "@/store/useActiveProductA";
+import { useIsActiveProduct } from "@/store/useActiveProduct";
 
 interface PropsType {
   active: ProductType[];
 }
 
 function Rankings({active}:PropsType) {
-  const {sortItems} = useItemsContext();
 
   const resetTable = ()=>{
     useIsActiveProduct.getState().resetActive()
@@ -33,7 +30,7 @@ function Rankings({active}:PropsType) {
           </header>
           {active.length > 0 ? (
             <section className={rankingsStyles.tableParent}>
-              <Table headers={headers} body={active} sortProducts={sortItems} />
+              <Table headers={headers} body={active} sortProducts={() =>{}} />
 
             </section>
           ) : (

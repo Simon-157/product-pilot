@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { debounce } from "lodash";
 
 // custom hooks and functions
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 import { filterProductsByBrand } from "@/utils/functions/filter-data";
 import { paginateProducts } from "@/utils/functions/slice-paginate";
 import { useIsActiveProduct } from "@/store/useActiveProductA";
@@ -13,8 +13,8 @@ import {useProductQuery} from "@/hooks/useProductQuery";
 // components
 import ProductCard from "@/components/product-card/ProductCard";
 import Rankings from "@/pages/compare";
-import Pagination from "./Pagination";
-import ProductFilter from "./ProductFilter";
+import Pagination from "../pages/products/components/Pagination";
+import ProductFilter from "../pages/products/components/ProductFilter";
 
 // styles
 import pStyles from "./product-styles.module.scss";
@@ -40,11 +40,19 @@ const Product: React.FC<ProductProps> = () => {
     setItemsPerPage(smallScreen ? 2 : 4);
   }, 100);
 
+
   useEffect(() => {
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
   }, []);
+  
 
   const filteredData = filterProductsByBrand(products, brandFilter);
   const displayedData = paginateProducts(filteredData, currentPage, itemsPerPage);
@@ -90,3 +98,5 @@ const Product: React.FC<ProductProps> = () => {
 };
 
 export default Product;
+
+

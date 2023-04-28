@@ -1,9 +1,8 @@
 // import { useItemsContext } from "@/contexts/activeItemsContextA";
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 import productStyles from './card-styles.module.scss';
-import { useIsActiveProduct } from "@/store/useActiveProductA";
+import { useIsActiveProduct } from "@/store/useActiveProduct";
 import { useEffect, useState } from "react";
-import { useItemsContext } from "@/contexts/ItemsContext";
 
 interface Props {
   product: ProductType;
@@ -12,7 +11,7 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product, compare }) => {
   const { activeProducts, addToActive, removeFromActive } = useIsActiveProduct();
-  const {setItems} = useItemsContext();
+  // const {setItems} = useItemsContext();
 
   // const isActive = useIsActiveProduct(product as unknown as ProductTyp);
   const [state, setState] = useState(compare)
@@ -22,13 +21,13 @@ const ProductCard: React.FC<Props> = ({ product, compare }) => {
 
     if (state) {
       removeFromActive(product.id);
-      setItems(activeProducts)
+      // setItems(activeProducts)
       // console.log(product.id)
       setState(false)
     } else {
       addToActive(product);
       setState(true)
-      setItems(activeProducts)
+      // setItems(activeProducts)
       console.log(activeProducts);
 
     }
