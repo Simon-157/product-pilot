@@ -1,3 +1,8 @@
+/* This Table component that takes in three props: `headers`, `body`,
+and `sortProducts`. It renders a table with the headers and body data passed in as props. It also
+has state variables for `col`, `key`, `hoveredProductId`, and uses the `useState` hook to manage
+them. It uses the `useCallback` hook to define memoized functions for handling click and mouse
+events. */
 import React, { useCallback, useState } from "react";
 import tableStyles from "./table.module.scss"
 import { ProductKey, ProductType } from "@/types/product-type";

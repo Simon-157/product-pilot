@@ -8,7 +8,7 @@
  */
 
 
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 
 type ProductKey = keyof ProductType;
 

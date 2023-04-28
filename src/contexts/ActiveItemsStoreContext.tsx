@@ -1,3 +1,11 @@
+/* This code is creating a React context and provider for managing a list of active products. It
+imports a custom hook `useIsActiveProduct` from a store file, which likely contains state and
+actions related to managing active products. It also imports a type `ProductType` from a types file.
+The `ActiveItemsContextState` interface defines the shape of the context state, which includes an
+array of active products, and functions for adding and removing products from the active list. The
+`ActiveItemsProvider` component wraps its children with the context provider, and passes down the
+active products and related functions as context values. Finally, the `useItemsContextStore` hook is
+exported for consuming the context values in child components. */
 import { useIsActiveProduct } from '@/store/useActiveProduct';
 import { ProductType } from '@/types/product-type';
 import React, { ReactNode } from 'react';

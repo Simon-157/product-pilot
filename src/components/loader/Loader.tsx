@@ -1,4 +1,5 @@
-
+/* This is a React component called `Loader` that renders a loading animation with 8 cards, each
+containing an image and a title.The `Loader` component is exported as the default export of the module. */
 import React from "react";
 import styles from "./loader.module.scss";
 
@@ -16,6 +17,5 @@ const Loader = () => {
 };
 
 export default Loader;
-
 
 

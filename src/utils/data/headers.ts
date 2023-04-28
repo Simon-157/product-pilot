@@ -1,4 +1,4 @@
-import { ProductKey } from "@/types/product";
+import { ProductKey } from "@/types/product-type";
 
 export const headers:ProductKey[] = [
   "images",

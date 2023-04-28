@@ -1,4 +1,4 @@
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 
 export const paginateProducts = (
   products: ProductType[],

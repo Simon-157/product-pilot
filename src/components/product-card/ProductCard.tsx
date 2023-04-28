@@ -1,3 +1,5 @@
+/* This code is defining a React functional component called `ProductCard` that takes in two props:
+`product` of type `ProductType` and `compare` of type `boolean`.  */
 import { ProductType } from "@/types/product-type";
 import productStyles from './card-styles.module.scss';
 import { useIsActiveProduct } from "@/store/useActiveProduct";
