@@ -6,29 +6,32 @@ import rankingsStyles from "./rankings.module.scss";
 
 //components
 import { headers } from "@/utils/data/headers";
-import { sortTable } from "@/utils/functions/functions";
-import Table from "@/components/product-table/Table";
-import { ItemsProvider, useItemsContext } from "@/contexts/ItemsContext";
-import Head from "next/head";
-import { ProductKey, ProductType } from "@/types/product";
+// import Table from "@/components/product-table/Table";
+import { useItemsContext } from "@/contexts/ItemsContext";
+import { ProductType } from "@/types/product";
+import Table from "@/components/product-table/TableA";
+import Button from "@/components/button/Button";
+import { useIsActiveProduct } from "@/store/useActiveProductA";
 
 interface PropsType {
   active: ProductType[];
 }
 
 function Rankings({active}:PropsType) {
-  const { items, setItems, sortItems} = useItemsContext();
-  // const [activeProducts, setActiveProducts] = useState(items);
+  const {sortItems} = useItemsContext();
 
+  const resetTable = ()=>{
+    useIsActiveProduct.getState().resetActive()
+  }
 
   return (
     <>
         <main className={rankingsStyles.rankingsWrapper}>
           <header className={rankingsStyles.banner}>
-            <h1>Rankings</h1>
-            <div></div>
+            <h1>Piloted Products Comparison</h1>
+            {/* <span><Button type="button" children={undefined} onClick={()=>resetTable()}/></span> */}
           </header>
-          {items.length > 0 ? (
+          {active.length > 0 ? (
             <section className={rankingsStyles.tableParent}>
               <Table headers={headers} body={active} sortProducts={sortItems} />
 
@@ -36,15 +39,14 @@ function Rankings({active}:PropsType) {
           ) : (
             <section className={rankingsStyles.tableParent}>
               <div className={rankingsStyles.placeholder}>
-                <h2>
-                  No new rankings...Sign up for{" "}
+                <h2 style={{textAlign:"center"}}>
+                  No new product piloted...Add more products{" "}
                   <strong className={rankingsStyles.highlight}>
-                    upcoming challenges
+                    to compare
                   </strong>{" "}
                   🎉
                 </h2>
               </div>
-              <div className={rankingsStyles.centerBtn}>Add more products</div>
             </section>
           )}
         </main>

@@ -48,7 +48,9 @@
         position:relative;
         height:35rem;
         width:30rem;
-        top:70%;
+        // top:50%;
+        bottom: 0;
+        left: 0;
 
         img{
             position: absolute;
@@ -62,17 +64,7 @@
     }
 }
 
-.arbitrary{
-    height:25vh;
-    box-sizing: border-box;
-    // position: fixed;
-    border-radius: 60% 0% 0% 0% / 100px;
-    background-color: rgba(3, 2, 24, 0.938);
-    -webkit-border-radius: 60% 0% 0% 0% / 100px;
-    -moz-border-radius: 60% 0% 0% 0% / 100px;
-    -ms-border-radius: 60% 0% 0% 0% / 100px;
-    -o-border-radius: 60% 0% 0% 0% / 100px;
-}   
+
 
 
 //Animations 

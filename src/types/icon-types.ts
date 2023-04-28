@@ -1,0 +1,1 @@
+export type IconProp = React.SVGProps<SVGSVGElement>;

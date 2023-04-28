@@ -1,19 +1,20 @@
 $image-overlay-opacity: 0.7;
-$product-main-color: green;
+$product-main-color: rgb(0, 128, 109);
 
 .product {
   cursor: pointer;
   position: relative;
-  padding-bottom: 100px;
   border-radius: 5px;
   overflow: hidden;
+  margin: 1rem;
   width: 15rem;
   height: 15rem;
   transition: all 500ms ease-out;
-  margin-bottom: 30px;
   border: 1px solid #ddd;
+  box-shadow: 0 4px 8px 0 rgba(37, 67, 67, 0.463);
+
   &:hover {
-    box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 13px 21px -5px rgba(30, 170, 140, 0.273);
     .image_overlay {
       opacity: $image-overlay-opacity;
     }

@@ -15,13 +15,15 @@
 
 
 :root {
-  --foreground-rgb: rgba(3, 20, 36, 0.934);
   --background-start-rgb: #f6f7f8;
-  --background-end-rgb: rgb(203, 224, 224), 255, 255;
+  --background-full: #f3ecec;
   --gradient-blue: #283c86;
-  --light-blue: rgba(40, 60, 135, 5%);
-  --dark-blue: #191f25;
   --app-font-primary: "Google Sans";
+  --dark-blue: #191f25;
+  --foreground-rgb: rgba(3, 20, 36, 0.934);
+  --background-end-rgb: rgb(203, 224, 224), 255, 255;
+  --light-blue: rgba(40, 60, 135, 5%);
+  --green-col:rgba(0, 128, 109, 0.114);
 
 }
 
@@ -31,14 +33,7 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background: var(--gradient-background);
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--bacground-full);
 }
 
 button,

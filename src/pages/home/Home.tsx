@@ -5,7 +5,7 @@ import Image from 'next/image'
 /* Importing the components and the styles from the folder. */
 
 import homeStyles from './home.module.scss'
-import CodeShot from  "@/assets/breeze-shot.png"
+import CodeShot from  "@/assets/e-commerce.png"
 
 
 const Home = () => {
@@ -13,20 +13,17 @@ const Home = () => {
 
   return (
     <>
-    <div className={homeStyles.Wrapper}>
+    <main className={homeStyles.Wrapper}>
        <div>
             <h2> Lets Solve the Challenge Together </h2>
             enjoy the full assets of a <strong>collaborative environment </strong>with visual <br/>interractions
        </div>
-       <div className={homeStyles.joinBtn} 
-       >
-       </div>
+     
         <div className = {homeStyles.codeShot}>
           <Image src={CodeShot} alt= "code-shot"/>
         </div>
-    </div>
-    <div className={homeStyles.arbitrary}>
-    </div>
+    </main>
+
     </>
   )
 }

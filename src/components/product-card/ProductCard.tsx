@@ -1,8 +1,9 @@
-import { useItemsContext } from "@/contexts/activeItemsContextA";
+// import { useItemsContext } from "@/contexts/activeItemsContextA";
 import { ProductType } from "@/types/product";
 import productStyles from './card-styles.module.scss';
 import { useIsActiveProduct } from "@/store/useActiveProductA";
 import { useEffect, useState } from "react";
+import { useItemsContext } from "@/contexts/ItemsContext";
 
 interface Props {
   product: ProductType;
@@ -11,6 +12,7 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product, compare }) => {
   const { activeProducts, addToActive, removeFromActive } = useIsActiveProduct();
+  const {setItems} = useItemsContext();
 
   // const isActive = useIsActiveProduct(product as unknown as ProductTyp);
   const [state, setState] = useState(compare)
@@ -20,11 +22,13 @@ const ProductCard: React.FC<Props> = ({ product, compare }) => {
 
     if (state) {
       removeFromActive(product.id);
-      console.log(product.id)
+      setItems(activeProducts)
+      // console.log(product.id)
       setState(false)
     } else {
       addToActive(product);
       setState(true)
+      setItems(activeProducts)
       console.log(activeProducts);
 
     }
@@ -33,7 +37,7 @@ const ProductCard: React.FC<Props> = ({ product, compare }) => {
   return (
     <div key={product.id} className={`${productStyles.col_sm_6} ${productStyles.col_md_3}`}>
       <div className={`${productStyles.product}${state ? ` ${productStyles.compare}` : ''}`}>
-        <img src={product.image} alt="" />
+        <img src={product.images} alt="" />
         <div className={productStyles.image_overlay} />
         <div className={productStyles.view_details} onClick={handlePilotClick}>
           {state ? 'Remove' : 'Pilot'}

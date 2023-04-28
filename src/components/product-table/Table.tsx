@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import tableStyles from "./table.module.scss"
 import { ProductKey, ProductType } from "@/types/product";
+import { useIsActiveProduct } from "@/store/useActiveProductA";
+import { sortTable } from "@/utils/functions/sort-data";
 
 interface TableProps {
   headers: string[];
@@ -10,6 +12,14 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ headers, body, sortProducts }) => {
   const [col, setCol] = useState<number>(0);
+  const { activeProducts } = useIsActiveProduct()
+  const [key, setKey] = useState('title' as ProductKey)
+
+  const handeClicked = useCallback((body: ProductType[], key: ProductKey) => {
+    sortTable(activeProducts, key)
+  }, activeProducts)
+
+
   return (
     <main className={tableStyles.tableWrapper}>
       <table cellSpacing="0">
@@ -26,7 +36,7 @@ const Table: React.FC<TableProps> = ({ headers, body, sortProducts }) => {
                   onClick={() => {
                     sortProducts(headName.toLocaleLowerCase() as ProductKey);
                     setCol(index);
-                    console.log(headName)
+                    setKey(headName as ProductKey)
                   }}
                   key={index}
                 >
@@ -37,18 +47,27 @@ const Table: React.FC<TableProps> = ({ headers, body, sortProducts }) => {
           </tr>
         </thead>
         <tbody>
-          {body?.map((product: ProductType, index: number) => (
+
+          {activeProducts?.length > 0 ? sortTable(activeProducts, key)?.map((product: ProductType, index: number) => (
             <tr key={index}>
-              <td className={tableStyles.imgTd}><img className={tableStyles.proImg} src={product.image} alt={product.title} /></td>
-              <td>{product.title}</td>
+              <td className={tableStyles.imgTd}><img className={tableStyles.proImg} src={product.images} alt={product.name} /></td>
+              <td>{product.name}</td>
               <td>{product.price}</td>
-              <td>{product.rating.count}</td>
-              <td>{product.rating.rate}</td>
-              {/* <td>{product.sql}</td> */}
-              {/* <td>{product.algorithms + product.scripting + product.sql}</td> */}
-              {/* <td>{product.buttons ?? product.buttons}</td> */}
+              <td>{product.ratings}</td>
+              <td>{product.ram}</td>
+              <td>{product.camera}</td>
             </tr>
-          )) ?? <div>loading...</div>}
+          )) ?? <div>loading...</div> 
+          
+          : body?.map((product: ProductType, index: number) => (
+            <tr key={index}>
+              <td className={tableStyles.imgTd}><img className={tableStyles.proImg} src={product.images} alt={product.name} /></td>
+              <td>{product.name}</td>
+              <td>{product.price}</td>
+              <td>{product.ratings}</td>
+              <td>{product.ram}</td>
+              <td>{product.camera}</td>
+            </tr>))}
         </tbody>
       </table>
     </main>

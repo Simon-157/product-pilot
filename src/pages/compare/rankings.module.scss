@@ -1,22 +1,30 @@
+$product-main-color: rgb(0, 128, 109);
+
 .rankingsWrapper {
+  
     display: flex;
     flex-flow: column;
     height: 100vh;
     overflow: hidden;
-  
+    padding: 1rem 5rem 2rem 5rem;
+
   .banner {
     padding: 1rem;
     color: white;
-    background-color: rgba(158, 200, 222, 0.836);
+    ;
+    background-color: $product-main-color;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    > h1{
+      font-weight: 900;
+    } 
   }
   
   .tableParent {
     background-color: white;
     flex-grow: 1;
-    
     overflow-y: auto;
     overflow-x: hidden;
   }

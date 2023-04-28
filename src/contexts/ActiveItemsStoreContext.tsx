@@ -3,7 +3,7 @@ import { useIsActiveProduct } from '@/store/useActiveProductA';
 import { ProductType } from '@/types/product';
 import React, { ReactNode } from 'react';
 
-interface ItemsContextState {
+interface ActiveItemsContextState {
   activeProducts: ProductType[];
   addToActive: (product:ProductType) => void;
   removeFromActive: (productId:number) => void;
@@ -14,18 +14,18 @@ interface Props {
   }
   
 
-const defaultContextValue: ItemsContextState = {
+const defaultContextValue: ActiveItemsContextState = {
   activeProducts: [],
   addToActive: () => {},
   removeFromActive: () => {},
 };
 
-const ItemsContext = React.createContext<ItemsContextState>(defaultContextValue);
+const ActiveItemsContext = React.createContext<ActiveItemsContextState>(defaultContextValue);
 
-export const ItemsProvider: React.FC<Props> = ({ children }) => {
+export const ActiveItemsProvider: React.FC<Props> = ({ children }) => {
   const { activeProducts, addToActive, removeFromActive } = useIsActiveProduct();
 
-  const contextValue: ItemsContextState = {
+  const contextValue: ActiveItemsContextState = {
     activeProducts,
     addToActive,
     removeFromActive
@@ -34,7 +34,7 @@ export const ItemsProvider: React.FC<Props> = ({ children }) => {
 
   console.log(activeProducts)
 
-  return <ItemsContext.Provider value={contextValue}>{children}</ItemsContext.Provider>;
+  return <ActiveItemsContext.Provider value={contextValue}>{children}</ActiveItemsContext.Provider>;
 };
 
-export const useItemsContext = () => React.useContext(ItemsContext);
+export const useItemsContextStore = () => React.useContext(ActiveItemsContext);

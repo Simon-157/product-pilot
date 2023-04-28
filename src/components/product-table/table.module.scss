@@ -1,7 +1,50 @@
+$product-main-color: rgb(0, 128, 109);
+
 .tableWrapper table {
   border-collapse: collapse;
-  font-size: 10.7px;
+  font-size: 15.7px;
   width: -webkit-fill-available;
+
+  .card {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 500px;
+    height: fit-content;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    background-color: white;
+
+    .cardImageWrapper {
+      height: 200px;
+      overflow: hidden;
+
+      .cardImage {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .cardDetails {
+      padding: 10px;
+
+      h2 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+
+
+
 
   .proImg {
     align-items: center;
@@ -10,17 +53,17 @@
 
 
     &:hover {
-      height: 50px;
-      width: 50px;
+      height: 45px;
+      width: 45px;
     }
   }
 
   th {
     padding: 1rem;
-    color: var(--gradient-blue);
+    color: $product-main-color;
     text-transform: uppercase;
-    font-size:medium;
-    font-stretch:semi-condensed;
+    font-size: medium;
+    font-stretch: semi-condensed;
 
     &:hover {
       background-color: var(--light-blue);
@@ -37,41 +80,39 @@
     }
 
 
-&.imgTd{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    &.imgTd {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   tr {
     cursor: pointer;
 
-    &:nth-child(even) {
-      background-color: var(--grey-1);
-      background-color: #f5f5f5;
+    &:nth-child(odd) {
+      background-color: #e4eded78;
     }
 
     &:hover {
-      background-color: var(--grey-2);
-      background-color: #fafafa;
+      background-color: #e4f7f876;
     }
   }
 
   @media screen and (min-width: 768px) {
     .tableWrapper table {
       font-size: 2rem;
+
       .proImg {
         height: 50px;
         width: 50px;
 
 
         &:hover {
-          height: 60px;
-          width: 60px;
+          height: 55px;
+          width: 55px;
         }
       }
     }
   }
 }
-
