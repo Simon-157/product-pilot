@@ -1,4 +1,4 @@
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 import { useState, useEffect } from "react";
 
 export const useIsActiveProduct = (initialState = [] as ProductType[]) => {
