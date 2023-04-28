@@ -1,16 +1,28 @@
-import { Category } from "@/types/category";
-import { categories } from "@/utils/data/categories";
-import categoryStyles from "./categories-styles.module.scss"
+//components
 import CategoryCard from "@/components/category-card/CategoryCard";
 
+//hooks
+import { useCategoryQuery } from "@/hooks/useProductQuery";
+import { CategoryType } from "@/types/category";
+
+//styles
+import categoryStyles from "./categories-styles.module.scss"
+import Loader from "@/components/loader/Loader";
 
 const CategoryPage = () => {
+  const { categories, isLoading, isError } = useCategoryQuery();
+
   return (
-    <div className={categoryStyles.baseWrapper}>
-      {categories.map((category:Category) => (
-        <CategoryCard key={category.id} category={category} />
-      ))}
-    </div>
+   
+
+  <div className={categoryStyles.baseWrapper}>
+    {isLoading && <Loader />}
+    {isError && <p>Error fetching categories.</p>}
+    {categories.map((category: CategoryType) => (
+      <CategoryCard key={category.id} category={category} />
+    ))}
+  </div>
+
   );
 };
 

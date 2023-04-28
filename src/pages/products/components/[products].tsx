@@ -13,8 +13,8 @@ import {useProductQuery} from "@/hooks/useProductQuery";
 // components
 import ProductCard from "@/components/product-card/ProductCard";
 import Rankings from "@/pages/compare";
-import Pagination from "./components/Pagination";
-import ProductFilter from "./components/ProductFilter";
+import Pagination from "./Pagination";
+import ProductFilter from "./ProductFilter";
 
 // styles
 import pStyles from "./product-styles.module.scss";
@@ -27,7 +27,9 @@ const Product: React.FC<ProductProps> = () => {
   const { category } = router.query;
   const categoryName = typeof category === "string" ? category : "";
 
-  const { products, isLoading, isError } = useProductQuery("phones");
+  const { products, isLoading, isError } = useProductQuery(categoryName);
+  console.log("products", products, "route", category);
+  
 
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(4);

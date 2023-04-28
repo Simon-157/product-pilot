@@ -1,8 +1,9 @@
-import { ProductType } from "@/types/product";
+import { ProductType } from "@/types/product-type";
 import { API_BASE_URL, CATEGORY, PRODUCTS } from "@/utils/constants";
 import axios from "axios";
 import { collection, getDocs, getFirestore, limit, query, where } from "firebase/firestore";
 import { firebaseApp } from "./firebase";
+import { CategoryType } from "@/types/category";
 
 
 export const fetchProductsFromDb = async (category: string): Promise<ProductType[]> => {
@@ -26,9 +27,20 @@ export const fetchProductsFromDb = async (category: string): Promise<ProductType
 };
 
 
+export const fetchCategoriesFromDb = async (): Promise<CategoryType[]> => {
+  const db = getFirestore(firebaseApp);
+  const categoriesCollection = collection(db, "categories");
+  const querySnapshot = await getDocs(categoriesCollection);
+  const categories: CategoryType[] = [];
+  querySnapshot.forEach((doc) => {
+    categories.push(doc.data() as CategoryType);
+  });
+  return categories;
+};
 
 
-const fetchProducts = async (category: string): Promise<ProductType[]> => {
+
+export const fetchProducts = async (category: string): Promise<ProductType[]> => {
   const { data } = await axios.get<ProductType[]>(
     `${API_BASE_URL}${PRODUCTS}/${CATEGORY}/${category}?limit=4`
   );

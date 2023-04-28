@@ -1,8 +1,6 @@
-export interface Category {
+export interface CategoryType {
     id:number,
     name: string;
     image: string;
     description: string;
-    link: string;
   }
-  
