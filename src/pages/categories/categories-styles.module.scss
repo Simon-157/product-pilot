@@ -1,3 +1,20 @@
+$product-main-color: rgb(0, 128, 109);
+
+.banner{
+  padding: 1rem;
+  color: white;
+  background-color: $product-main-color;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  > h1{
+    font-weight: 500;
+    font-size: 1.5rem;
+  } 
+}
+
+
 .baseWrapper {
   display: flex;
   justify-content: space-evenly;
@@ -11,6 +28,8 @@
   padding: 4rem;
   overflow-y: auto;
   overflow-x: hidden;
+
+ 
 }
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android & Iphones) */
@@ -26,4 +45,15 @@
     padding: 2rem;
   }
 
+}
+
+@media screen and (max-width: 480px ){ 
+  .banner {
+    &h1{
+    font-weight: 400;
+      font-size: 1rem;
+    }
+  
+
+  }
 }

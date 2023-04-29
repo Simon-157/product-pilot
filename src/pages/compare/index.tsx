@@ -1,3 +1,7 @@
+/* This is a functional component called `Rankings` that displays a table of products. The component renders a header with a title, and a table with headers
+and body data passed as props. If there are no products to display, it renders a placeholder
+message. There is also a button that calls a function to reset the table. */
+
 //libraries 
 import React, { useState } from "react";
 

@@ -1,36 +1,38 @@
+
 $image-overlay-opacity: 0.7;
 $product-main-color: rgb(0, 128, 109);
 
 .product {
   cursor: pointer;
   position: relative;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   overflow: hidden;
-  margin: 1rem;
+  margin: 0.5rem;
   width: 15rem;
   height: 15rem;
   transition: all 500ms ease-out;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px 0 rgba(37, 67, 67, 0.463);
+  border: 0.0625rem solid #ddd;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(37, 67, 67, 0.463);
 
   &:hover {
-    box-shadow: 0 13px 21px -5px rgba(30, 170, 140, 0.273);
+    box-shadow: 0 0.8125rem 1.3125rem -0.3125rem rgba(30, 170, 140, 0.273);
+
     .image_overlay {
       opacity: $image-overlay-opacity;
     }
 
     .view_details {
       opacity: 1;
-      width: 152px;
-      font-size: 15px;
-      margin-left: -75px;
-      top: 35%;
+      width: 8rem;
+      font-size: 0.8rem;
+      margin-left: -3.6875rem;
       transition: all 200ms ease-out;
     }
   }
 
-  img {
-    width: 100%;
+    img {
+    width: 90%;
+    height:90%;
   }
 
   &.compare {
@@ -41,34 +43,33 @@ $product-main-color: rgb(0, 128, 109);
 
   .stats_container {
     background: #fff;
-    padding: 25px 15px;
+    padding: 1.5625rem 0.9375rem;
     position: absolute;
     bottom: 0;
     width: 100%;
     text-overflow: ellipsis;
 
     .product_name {
-      font-size: 22px;
+      font-size: 1.375rem;
       color: #393c45;
     }
 
-  
     p {
-        font-size: 16px;
-        color: #b1b1b3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      font-size: 13px;
+      font-size: 1rem;
+      color: #b1b1b3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.8125rem;
+      margin: 0;
+    }
 
-        margin: 0;
-      }
-      
     .product_price {
       float: right;
       color: $product-main-color;
-      font-size: 16;
+      font-size: 1rem;
       font-weight: 400;
+      font-size: 0.8125rem;
     }
   }
 
@@ -85,17 +86,17 @@ $product-main-color: rgb(0, 128, 109);
 
   .view_details {
     position: absolute;
-    top: 112px;
+    top: 35%;
     left: 50%;
-    margin-left: -85px;
-    border: 2px solid #fff;
+    margin-left: -5.3125rem;
+    border: 0.0625rem solid #fff;
     color: #fff;
-    font-size: 19px;
+    font-size: 1.1875rem;
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
-    padding: 10px 0;
-    width: 172px;
+    padding: 0.625rem 0;
+    width: 10.75rem;
     opacity: 0;
     transition: all 200ms ease-out;
 
@@ -107,16 +108,35 @@ $product-main-color: rgb(0, 128, 109);
   }
 }
 
+/*  RESPONSIVE MEDIA QUERIESS FOR SMART PHONES, TABLETS ETC  */
 
+@media screen and (max-width: 768px) {
+  .product{
+    margin: 0.2rem;  
+    width: 12rem;
+    height: 12rem;
+  }
+}
 
-@media (min-width: 640px) {
-    .col_sm_6 {
-      width: 50%; // 6 out of 12 columns
-    }
+@media screen and (max-width: 640px) {
+
+  .product{
+    margin: 0.2rem;  
+    width: 10rem;
+    height: 10rem;
+
   }
-  @media (min-width: 768px) {
-    .col_md_3 {
-      width: 25%; // 3 out of 12 columns
-    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .product{
+    margin: 0.2rem;  
+    width: 8rem;
+    height: 8rem;
+
   }
-  
+
+}
+

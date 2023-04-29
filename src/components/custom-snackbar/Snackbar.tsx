@@ -16,28 +16,59 @@ const variantColors = {
   error: '#f44336',
   info: '#2196f3',
 };
+// /**
+//  * This is a TypeScript React component for a custom snackbar with a message, variant, and onClose
+//  * function that automatically closes after 2 seconds.
+//  * @param  - - `message`: the message to be displayed in the snackbar
+//  * @returns The `CustomSnackbar` component is being returned.
+//  */
+
+// const CustomSnackbar: React.FC<Props> = ({ message, variant, open, onClose }) => {
+//   const [isVisible, setIsVisible] = useState(false);
+
+//   useEffect(() => {
+//     if (open) {
+//       setIsVisible(true);
+//       setTimeout(() => {
+//         setIsVisible(false);
+//         onClose();
+//       }, 2000);
+//     }
+//   }, [open, onClose]);
+
+//   return (
+//     <div className={`${styles.snackbar} ${isVisible ? styles.open : ''}`} style={{ backgroundColor: variantColors[variant] }}>
+//       <span className={styles.message}>{message}</span>
+//       <button className={styles.closeButton} onClick={() => setIsVisible(false)}>
+//         X
+//       </button>
+//     </div>
+//   );
+// };
+
+
 
 const CustomSnackbar: React.FC<Props> = ({ message, variant, open, onClose }) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (open) {
-      setIsVisible(true);
-      setTimeout(() => {
-        setIsVisible(false);
-        onClose();
-      }, 2000);
-    }
-  }, [open, onClose]);
-
-  return (
-    <div className={`${styles.snackbar} ${isVisible ? styles.open : ''}`} style={{ backgroundColor: variantColors[variant] }}>
-      <span className={styles.message}>{message}</span>
-      <button className={styles.closeButton} onClick={() => setIsVisible(false)}>
-        X
-      </button>
-    </div>
-  );
-};
-
+    const [isVisible, setIsVisible] = useState(false);
+  
+    useEffect(() => {
+      if (open) {
+        setIsVisible(true);
+        setTimeout(() => {
+          setIsVisible(false);
+          onClose();
+        }, 2000);
+      }
+    }, [open, onClose]);
+  
+    return (
+      <div className={`${styles.snackbar} ${isVisible ? styles.open : ''}`} style={{ backgroundColor: variantColors[variant] }}>
+        <span className={styles.message}>{message}</span>
+        <button className={styles.closeButton} onClick={() => setIsVisible(false)}>
+          X
+        </button>
+      </div>
+    );
+  };
+  
 export default CustomSnackbar;

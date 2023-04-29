@@ -1,3 +1,9 @@
+/**
+ * This is component renders a dropdown menu to filter products by brand.
+ * @returns  It takes in three props: `uniqueBrands`, `brandFilter`, and `setBrandFilter`. It returns a div that contains a label
+ * with a select dropdown menu. The options in the dropdown menu are generated dynamically based on the
+ * `uniqueBrands` prop. The selected value of the dropdown menu is controlled by the `brandFilter
+ */
 import React from "react";
 import pStyles from "../product-styles.module.scss";
 

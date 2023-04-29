@@ -9,6 +9,7 @@ $small-screen: 768px;
   align-items: center;
   flex-grow: 1;
   flex-flow: wrap;
+  height: 20rem;
   width: 100%;
 
   // .categoryCard{
@@ -97,19 +98,40 @@ $small-screen: 768px;
 
 }
 
-
+.placeholder{
+  color: #22493e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 // RESPONIVENES MEDIA QUERIES FOR SMALL SCREENS
 @media screen and (max-width: $small-screen) {
   .paginationWrapper {
     button {
       &:not(.previous):not(.next) {
-        display: none;
+        margin: 2rem;
       }
     }
   }
 
-  .baseWrapper .categoryCard:nth-child(n + 3) {
+  .baseWrapper .categoryCard:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 780) {
+  .paginationWrapper {
+    button {
+      &:not(.previous):not(.next) {
+        margin: 2rem;
+      }
+    }
+  }
+
+  .baseWrapper .categoryCard:nth-child(n + 4) {
     display: none;
   }
 }

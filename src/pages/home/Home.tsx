@@ -1,3 +1,4 @@
+
 /* Importing the useContext hook from react. */
 import React, {useContext} from 'react'
 import Image from 'next/image'
@@ -9,8 +10,6 @@ import CodeShot from  "@/assets/e-commerce.png"
 
 
 const Home = () => {
-
-
   return (
     <>
     <main className={homeStyles.Wrapper}>

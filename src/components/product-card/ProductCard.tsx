@@ -1,9 +1,19 @@
 /* This code is defining a React functional component called `ProductCard` that takes in two props:
 `product` of type `ProductType` and `compare` of type `boolean`.  */
-import { ProductType } from "@/types/product-type";
-import productStyles from './card-styles.module.scss';
-import { useIsActiveProduct } from "@/store/useActiveProduct";
+
+// libraries
 import { useState } from "react";
+
+// components
+import { ProductType } from "@/types/product-type";
+
+import { useIsActiveProduct } from "@/store/useActiveProduct";
+
+//custom snackbar hook
+import { useSnackbar } from "@/hooks/useSnackBar";
+
+// styles
+import productStyles from './card-styles.module.scss';
 
 interface Props {
   product: ProductType;
@@ -11,21 +21,23 @@ interface Props {
 }
 
 const ProductCard: React.FC<Props> = ({ product, compare }) => {
-  const { activeProducts, addToActive, removeFromActive } = useIsActiveProduct();
-
+  const { addToActive, removeFromActive } = useIsActiveProduct();
   const [state, setState] = useState(compare)
+  const { showSnackbar, snackbar } = useSnackbar();
+
 
   const handlePilotClick = () => {
-    console.log("clicked");
-
+    // console.log("clicked");
     if (state) {
       removeFromActive(product.id);
       setState(false)
+      showSnackbar("Product removed", "info")
+      
     } else {
       addToActive(product);
       setState(true)
-      console.log(activeProducts);
-
+      showSnackbar("Pilotted Product", "success")
+      // console.log(activeProducts);
     }
   };
 
@@ -36,6 +48,7 @@ const ProductCard: React.FC<Props> = ({ product, compare }) => {
         <div className={productStyles.image_overlay} />
         <div className={productStyles.view_details} onClick={handlePilotClick}>
           {state ? 'Remove' : 'Pilot'}
+          {snackbar}
         </div>
         <div className={productStyles.stats}>
           <div className={productStyles.stats_container}>

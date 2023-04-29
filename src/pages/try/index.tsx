@@ -1,23 +1,18 @@
-import CustomSnackbar from "@/components/custom-snackbar/Snackbar";
-import { useState } from "react";
+import { useSnackbar } from "@/hooks/useSnackBar";
 
 const MyComponent: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const { showSnackbar, snackbar } = useSnackbar();
 
   const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+    showSnackbar('Hello world!', 'success');
   };
 
   return (
-    <>
+    <div>
       <button onClick={handleClick}>Show Snackbar</button>
-      <CustomSnackbar message="This is a success message!" variant="success" open={open} onClose={handleClose} />
-    </>
+      {snackbar}
+    </div>
   );
 };
 
-export default MyComponent;
+export default MyComponent

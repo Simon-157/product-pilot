@@ -1,3 +1,9 @@
+/* Te Prouct component takes in props of type `ProductProps` which includes an
+array of `products`, an array of `uniqueBrands`, a `brandFilter` string, a `setBrandFilter`
+function, a boolean `isLoading`, a boolean `isError`, the current page number `currentPage`, the
+total number of pages `totalPages`, a function to handle page changes `onPageChange`, and an array
+of `activeProducts`. */
+
 //libraries
 import React from "react";
 
@@ -15,16 +21,23 @@ import Loader from "@/components/loader/Loader";
 
 // styles
 import pStyles from "../product-styles.module.scss";
-
-
+import { useSnackbar } from "@/hooks/useSnackBar";
 
 const Product: React.FC<ProductProps> = ({ products, uniqueBrands, brandFilter, setBrandFilter, isLoading, isError, currentPage, totalPages, onPageChange, activeProducts }) => {
+    const { showSnackbar, snackbar } = useSnackbar();
+
+    // function to handle error
+    const handleLoadError = () => {
+        showSnackbar("An error occurred", "error");
+        return null;
+    }
 
     return (
         <>
             <main>
                 <section>
-                    {isError && <h2>An error occurred</h2>}
+                    {isError && handleLoadError()} 
+                    {snackbar}
                     {isLoading ? (
                         <Loader />
                     ) : (
@@ -34,6 +47,7 @@ const Product: React.FC<ProductProps> = ({ products, uniqueBrands, brandFilter, 
                                 brandFilter={brandFilter}
                                 setBrandFilter={setBrandFilter}
                             />
+                            {products?.length == 0 && <h2 className={pStyles.placeholder}>No products in this category</h2>}
 
                             <div className={pStyles.baseWrapper}>
                                 {products?.map((prod: ProductType) => (
@@ -58,4 +72,4 @@ const Product: React.FC<ProductProps> = ({ products, uniqueBrands, brandFilter, 
     );
 };
 
-export default Product;
+export default Product

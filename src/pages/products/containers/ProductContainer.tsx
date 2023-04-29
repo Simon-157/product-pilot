@@ -16,6 +16,11 @@ import { RootState } from "@/store/store";
 
 interface ProductContainerProps {}
 
+/* This is component renders a list of products based on the selected category. 
+It uses various hooks and functions to filter and paginate the data, and also
+handles resizing of the screen to adjust the number of items displayed per page.  It returns a `Product` component
+with the filtered and paginated data, along with the other props. */
+
 const ProductContainer: React.FC<ProductContainerProps> = () => {
   const { activeProducts } = useIsActiveProduct();
   const categoryName = useSelector((state: RootState) => state.category.categoryName);
