@@ -35,6 +35,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## APP STATE MANAGEMENT
+- Redux : generaly used together with local storage to maintain the app's state when the page refreshes
+    - for example; when you choose a category and you visit the product page for the first time, state of the app is maintianed such that when the page refreshes, you dont have to go back to the categories page to choose .
+- Context : for sharing props among components
+- Zustand : to maintian state of piloted products for comparison (active products) and table state.
+
 ## TESTING
 
 - There are currently four categories of product in the database,
