@@ -1,3 +1,8 @@
+/**
+ * The code exports two query hooks, one for fetching and caching categories data and another for
+ * fetching and caching product data based on a given category name.
+ * @returns Two query hooks are being returned: `useCategoryQuery` and `useProductQuery`.
+ */
 // useProductQuery.ts
 import { QueryObserverResult, useQuery } from "react-query";
 import { ProductType } from "@/types/product-type";

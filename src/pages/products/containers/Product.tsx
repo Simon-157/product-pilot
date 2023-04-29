@@ -1,4 +1,4 @@
-/* Te Prouct component takes in props of type `ProductProps` which includes an
+/* The Prouct component takes in props of type `ProductProps` which includes an
 array of `products`, an array of `uniqueBrands`, a `brandFilter` string, a `setBrandFilter`
 function, a boolean `isLoading`, a boolean `isError`, the current page number `currentPage`, the
 total number of pages `totalPages`, a function to handle page changes `onPageChange`, and an array

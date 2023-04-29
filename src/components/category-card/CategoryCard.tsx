@@ -1,5 +1,5 @@
 /**
- * This is a React functional component that renders a card for a category, with an image, name,
+ * This CategoryCard component that renders a card for a category, with an image, name,
  * description, and a link to view products in that category.
  * @param  - it that takes in a single prop called `category` of type `CategoryType`.`
  * @returns The CategoryCard component is being returned.

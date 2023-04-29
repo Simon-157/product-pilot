@@ -1,7 +1,6 @@
 $product-main-color: rgb(0, 128, 109);
 $small-screen: 768px;
 
-
 .baseWrapper {
   display: flex;
   justify-content: center;
@@ -9,39 +8,59 @@ $small-screen: 768px;
   align-items: center;
   flex-grow: 1;
   flex-flow: wrap;
-  height: 20rem;
+  // height: 20rem;
   width: 100%;
-
-  // .categoryCard{
-  //     // padding: 0.8em;
-  // }
 }
-
 
 .filterWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  // margin-bottom: 1rem;
   padding: 0.3rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  padding-right: 4rem;
+  background-color: #f8f8f8;
+  color:rgb(14, 57, 50);
   
   label {
+    font-size: 1rem;
     position: absolute;
     right: 35%;
-    select {
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 2px 1px #ccc;
-      }
+  }
+
+  select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color:rgb(0, 128, 109);
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 2px 1px #ccc;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    label {
+      right: 10%;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    
+    label {
+      position: static;
+      margin-bottom: 0.5rem;
     }
   }
 }
+
+
 
 
 .paginationWrapper {
