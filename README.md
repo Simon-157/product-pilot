@@ -11,12 +11,29 @@ used firebase
 initial testing was done with json and later to public api and finally to private api with database
 ```
 
+```
+PRODUCTION
+```
+Please visit the [TESTING PHASE LINK](https://product-pilot.vercel.app/)
+
+
 
 ## PRODUCT PILOT
 
 First, run the development server:
 
 ### Running locally
+
+```bash
+// run this to clone the repo
+
+git clone https://github.com/Simon-157/product-pilot.git
+```
+
+```bash
+// enter the directory
+cd product-pilot
+```
 
 
 
