@@ -112,6 +112,9 @@ Returns:
 
 Two query hooks: useCategoryQuery and useProductQuery.
 
+## MAIN APP COMPONENTS
+- Details included in all components files (found in the Pages folder)
+
 ## GENERAL COMPONENTS
 
 The application's user interface is modular and reusable, and it is constructed using React components. Here are descriptions of some of the components:
