@@ -1,27 +1,36 @@
 
 /* Importing the useContext hook from react. */
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 
 /* Importing the components and the styles from the folder. */
 
 import homeStyles from './home.module.scss'
-import CodeShot from  "@/assets/e-commerce.png"
+import CodeShot from "@/assets/e-commerce.png"
+import Button from '@/components/button/Button'
+import Link from 'next/link'
 
 
 const Home = () => {
   return (
     <>
-    <main className={homeStyles.Wrapper}>
-       <div>
-            <h2> Lets Solve the Challenge Together </h2>
-            enjoy the full assets of a <strong>collaborative environment </strong>with visual <br/>interractions
-       </div>
-     
-        <div className = {homeStyles.codeShot}>
-          <Image src={CodeShot} alt= "code-shot"/>
+      <main className={homeStyles.Wrapper}>
+        <div>
+          <h2>Compare and conquer<br />Find the perfect product match</h2>
+          looking for the best value or the highest quality?
+          <br /> our <strong> product comparison table  </strong>makes it easy to find <br />the perfect fit for your needs. <br />
+          <br />
+         
         </div>
-    </main>
+        <div>
+        <Link
+          className={homeStyles.joinBtn}
+            href='/categories'
+          >
+            Get Started
+          </Link>
+        </div>
+      </main>
 
     </>
   )

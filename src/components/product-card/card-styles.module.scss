@@ -122,8 +122,8 @@ $product-main-color: rgb(0, 128, 109);
 
   .product{
     margin: 0.2rem;  
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
 
   }
 
@@ -133,8 +133,18 @@ $product-main-color: rgb(0, 128, 109);
 
   .product{
     margin: 0.2rem;  
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 10rem;
+
+  }
+
+  .view_details {
+    top: 30%;
+    left: 50%;
+    margin-left: -3.3125rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 8.75rem;
 
   }
 

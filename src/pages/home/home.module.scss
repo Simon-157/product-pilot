@@ -1,91 +1,127 @@
-.Wrapper{
-    overflow:hidden;
-    width: 100vw;
-    height: 62.25vh;
+.Wrapper {
+    overflow: hidden;
+    width: 100%;
     display: flex;
-    justify-content:center;
-    align-items:center;
-    //:;
-    >div{
-    position:absolute;
-    text-align: center;
-    left:12rem;
-    right:15rem;
-    top:10rem;
-    font-size:150%;
-    text-align:center;
-        color: rgb(8, 8, 70);
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 
-        & strong{
+    >div {
+        text-align: center;
+        font-size: 150%;
+        text-align: center;
+        color: rgb(8, 64, 70);
+
+        & strong {
             color: rgb(6, 51, 4);
             font-size: larger;
         }
     }
 
-    .joinBtn{
-        position: absolute;
+    .joinBtn {
         display: flex;
         justify-content: center;
-        top: 18rem;
+        align-items: center;
+        height: 2.2rem;
+        cursor: pointer;
+        background-color: rgba(27, 83, 66, 0.552);
+        width: auto;
+        animation: button-animate 1s linear infinite alternate;
+        -webkit-animation: button-animate 1s linear infinite alternate;
+        padding: 1rem;
+        font-size: 120%;
+        text-transform: capitalize;
+        color: rgb(5, 29, 30);
 
-        button{
-            cursor: pointer;
-            background-color: rgb(16, 16, 66);
-            width: auto;
-            animation: button-animate 1s linear infinite alternate;
-            -webkit-animation: button-animate 1s linear infinite alternate;
-            a{
-            font-size:120%;
-            cursor: pointer;
-            text-transform:capitalize;
-            color: rgb(143, 189, 142) ;
-            }
-        }
-        
     }
 
-    .codeShot{
-        position:relative;
-        height:35rem;
-        width:30rem;
-        // top:50%;
-        bottom: 0;
-        left: 0;
-
-        img{
-            position: absolute;
-            right:-65%;
-            top:10%;
-            z-index:1;
-            bottom: 50%;
-            width: 100%;
-            animation: suspend 1s linear infinite alternate;
+    @media only screen and (max-width: 480px) {
+        >div {
+            font-size: 120%;
         }
     }
 }
 
 
 
-
-//Animations 
+//Animations
 @keyframes suspend {
     from {
-      transform: translateY(-1rem);
+        transform: translateY(-1rem);
     }
+
     to {
-      transform: translateY(0rem);
+        transform: translateY(0rem);
     }
-  }
+}
 
 @keyframes button-animate {
     0% {
         box-shadow: 0px 0px 0.5rem #0B0055;
     }
+
     50% {
         box-shadow: 0px 0px 1px #0B0055;
     }
+
     100% {
         box-shadow: 0px 0px 2rem #0B0055;
     }
 }
-    
+
+
+
+@media screen and (max-width: 480px) {
+    .Wrapper {
+
+        font-size: 0.8rem;
+
+        >div {
+            text-align: center;
+            font-size: 80%;
+
+
+            & strong {
+                color: rgb(6, 51, 4);
+                font-size: medium;
+            }
+        }
+
+        .joinBtn {
+            a {
+                width: 100%;
+                font-size: 100%;
+            }
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .Wrapper {
+
+        font-size: 0.9rem;
+
+        >div {
+            text-align: center;
+            font-size: 90%;
+
+
+            & strong {
+                color: rgb(6, 51, 4);
+                font-size: medium;
+            }
+        }
+
+        .joinBtn {
+            a {
+                width: 100%;
+                font-size: 110%;
+            }
+
+        }
+    }
+}
+
